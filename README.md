@@ -1,6 +1,6 @@
-# RIG
+# Random Instruction Generator (RIG)
 RISC-V Random Instruction Generator Using Python
-Installing the Spike RISC-V Simulator for Linux
+
 
 # Installing Spike Make a new directory for Spike:
 
