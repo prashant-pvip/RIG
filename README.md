@@ -8,8 +8,16 @@ RISC-V Random Instruction Generator Using Python
 	cd RISCV
 	#Clone the repos for the RISCV GNU toolchain
 	git clone --recursive https://github.com/riscv-collab/riscv-gnu-toolchain
+RISCV toolchain GNU
 
-	#Cloning for Riscv-pk & Riscv-isa-sim
+	sudo apt-get install gcc-riscv64-linux-gnu
+Several standard packages are needed to build the toolchain.
+On Ubuntu, executing the following command should suffice:
+	
+	sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev libnewlib-dev
+
+#Cloning for Riscv-pk & Riscv-isa-sim
+
 	git clone https://github.com/riscv/riscv-pk
 	git clone https://github.com/riscv/riscv-isa-sim
 
@@ -36,10 +44,6 @@ Finally to build Spike
 	make
 	make install
 
-RISCV toolchain GNU
-
-	sudo apt-get install gcc-riscv64-linux-gnu
-	sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev libnewlib-dev
 
 Check if the installation is successful
 Create a test.c, and enter the following codes:
