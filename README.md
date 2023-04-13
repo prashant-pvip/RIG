@@ -95,3 +95,11 @@ sudo pip install xlwt xlrd
 Python3 xl.py
 
 riscv32-unknown-elf-gcc test.c
+
+Refference:
+http://acsa.ustc.edu.cn/ics/download/riscv/spike-tutorial-linux.pdf
+	
+https://www.francisz.cn/2020/07/22/riscv-simulator/
+	
+https://github.com/riscv-collab/riscv-gnu-toolchain
+	
