@@ -74,7 +74,7 @@ rd_lev3_dict = {}
 rs1_lev3_dict = {}
 rs2_lev3_dict = {}
 
-for i in range(1,11):
+for i in range(2,sheet.nrows):
     rd_lev3 = cell_to_reg_list(i,11)
     rs1_lev3 = cell_to_reg_list(i,12)
     rs2_lev3 = cell_to_reg_list(i,13)
@@ -93,7 +93,7 @@ arthList = []
 weightList = []
 sampleList = [x for x in range (0,32)]
 #print(sampleList)
-for i in range(1,sheet.nrows):
+for i in range(2,sheet.nrows):
     arthList+= [sheet.cell_value(i,9)]
     weightList+= [sheet.cell_value(i,14)]
     ######## checking whether the next entry is valid or not(!white space) ##########
@@ -114,13 +114,24 @@ for j in range (0,50):
             instrType = sheet.cell_value(i,10)
             break
     #RD = random.choices(rd_lev3_dict[instr[0]])
+    if(instrType == "R"):
+        RD = random.choices(rd_lev3_dict[instr[0]])
+        RS1 = random.choices(rs1_lev3_dict[instr[0]])
+        RS2 = random.choices(rs2_lev3_dict[instr[0]])
+        output.write("\t"+instr[0]+" ") 
+        output.write(RD[0] + "," + RS1[0] + "," + RS2[0] + "\n")
 
-    RD = random.choices(rd_lev3_dict[instr[0]])
-    RS1 = random.choices(rs1_lev3_dict[instr[0]])
-    RS2 = random.choices(rs2_lev3_dict[instr[0]])
+
+    if(instrType == "I"):
+        RD = random.choices(rd_lev3_dict[instr[0]])
+        RS1 = random.choices(rs1_lev3_dict[instr[0]])
+        imm = random.randint(0,500)
+        output.write("\t"+instr[0]+" ") 
+        output.write(RD[0] + "," + RS1[0] + "," + str(imm) + "\n")
+
+
+
     
-    output.write("\t"+instr[0]+" ") 
-    output.write(RD[0] + "," + RS1[0] + "," + RS2[0] + "\n")
             
  
 '''
